@@ -11,8 +11,9 @@ namespace Objective_1
         //static int n = 3, m = 4;
         //int[,] array = new int[n, m];
         int[,] array;
+        // Чому немає конструктора?
         private void Matrix(int n = 3, int m = 4)
-        {
+        {// Локальні змінні іменуються з маленької літери
             int Ibeg = 0, Ifin = 0, Jbeg = 0, Jfin = 0;
             array = new int[n, m];
             int number = 1;
@@ -20,7 +21,7 @@ namespace Objective_1
             int j = 0;
 
             while (number <= n * m)
-            {
+            {// не найоптимальніший підхід....
                 array[i, j] = number;
 
                 if (j == Jbeg && i < n - Ifin - 1)
@@ -74,6 +75,7 @@ namespace Objective_1
                 ++number;
             }
         }
+        // має бути метод ToString замість методу print
         public void PrintMatrix()
         {
             for (int x = 0; x < array.GetLength(0); ++x)
@@ -87,7 +89,7 @@ namespace Objective_1
         {
             int tempN = 0, tempM = 0, counter = 0;
             do
-            {
+            {// перехід по мітках слід уникати...
             nLoop:
                 try
                 {
@@ -117,7 +119,7 @@ namespace Objective_1
                 }
 
             } while (counter != 2);
-
+// метод взяв на себе надлишкові обов'язки...
             Console.WriteLine("Select the bypass direction: ");
             Console.WriteLine("1 - Spiral matrix ");
             Console.WriteLine("2 - Basic spiral matrix ");
