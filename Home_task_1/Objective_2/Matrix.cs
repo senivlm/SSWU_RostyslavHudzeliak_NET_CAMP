@@ -9,6 +9,7 @@ namespace Objective_2
     internal class Matrix
     {
         int[,] matrix;
+        //лічильники не слід прийнято іменувати такими ідентифікаторами...Знову відсутній конструктор...
         private void FillMatrix(int x = 5, int y = 4)                                                           // Fill matrix with random numbers
         {
             matrix = new int[y, x];
@@ -37,7 +38,7 @@ namespace Objective_2
                 }
 
             void CheckHorizont((int x, int y) start, (int dx, int dy) step, (int, int)[,] check)                // Method to check horizontal lines
-            {                                                                                                   // In matrix
+            {             // Алгоритмічно не все добре. При потребі поясню усно...                                                                                 // In matrix
                 var (xend, yend) = start;
                 int count = 0;
                 while (xend < matrix.GetLength(0) && yend < matrix.GetLength(1) && matrix[xend, yend] == matrix[start.x, start.y])
